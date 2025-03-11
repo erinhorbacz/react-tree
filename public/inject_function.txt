@@ -1,0 +1,12 @@
+(function() {
+  // Inject the CSS
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'http://localhost:8080/assets/index.css'; // Replace with the correct URL
+  document.head.appendChild(link);
+
+  // Inject the React app script
+  const script = document.createElement('script');
+  script.src = 'http://localhost:8080/assets/index.js'; // Replace with the correct URL
+  document.head.appendChild(script);
+})();
