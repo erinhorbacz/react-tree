@@ -1,0 +1,136 @@
+.tree-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.tree-node {
+  height: 50px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 10px;
+  background-color: #006fcf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tree-node:hover {
+  background-color: #0057a3;
+  transform: scale(1.1);
+  z-index: 3000;
+}
+
+.tree-branch {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  margin: 20px 0;
+}
+
+.tree-children {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 20px;
+}
+
+.tree-children::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background-color: #ccc;
+}
+
+.tree-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.tree-item::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background-color: #ccc;
+}
+
+.tree-children .tree-item::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background-color: #ccc;
+}
+
+.tree-children .tree-item::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ccc;
+  display: none;
+}
+
+.tree-children .tree-item:not(:only-child)::after {
+  display: block;
+}
+
+.tree-children .tree-item:first-child::after {
+  left: 50%;
+  width: 100%;
+  right: 0;
+}
+
+.tree-children .tree-item:last-child::after {
+  right: 50%;
+  left: 0;
+}
+
+.node-info {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  max-width: 300px;
+  max-height: 600px;
+  overflow: auto;
+  text-align: left;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  white-space: nowrap;
+}
+
+.node-info h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.node-info p {
+  margin: 0;
+  font-size: 14px;
+}

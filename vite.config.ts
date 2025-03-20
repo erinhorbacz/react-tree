@@ -7,8 +7,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        entryFileNames: `assets/index.js`, // Consistent filename for JS
-        assetFileNames: `assets/[name].[ext]`, // Consistent filename for assets (e.g., CSS)
+        entryFileNames: `assets/react-tree-index.js`, // Consistent filename for JS
+        assetFileNames: `assets/react-tree-[name].[ext]`, // Consistent filename for assets (e.g., CSS)
       },
     },
   },
